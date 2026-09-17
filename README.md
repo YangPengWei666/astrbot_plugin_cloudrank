@@ -477,6 +477,16 @@ AstrBot/data/plugin_data/cloudrank/
 - **性能考虑**: 记录和分析大量聊天数据可能会消耗一定的系统资源，对于非常活跃的机器人或服务器资源有限的情况，请适当调整历史记录天数和词云生成频率
 - **依赖冲突**: 确保 `requirements.txt` 中列出的依赖版本与您的 Python 环境和其他 AstrBot 插件兼容
 
+## ◆ 反馈与维护（社区维护版）
+
+本 fork 由社区志愿者维护（原仓库 [GEMILUXVII/astrbot_plugin_cloudrank](https://github.com/GEMILUXVII/astrbot_plugin_cloudrank) 已停止维护）。
+
+- **遇到问题 / 有建议**：请到本仓库 GitHub Issues 反馈 → [https://github.com/YangPengWei666/astrbot_plugin_cloudrank/issues](https://github.com/YangPengWei666/astrbot_plugin_cloudrank/issues)
+- **反馈时请附上**：AstrBot 版本、插件版本、平台（QQ/微信/Telegram 等）、完整报错日志、复现步骤，方便快速定位
+- **维护承诺**：会定期查看并处理 Issues；严重 bug 会尽快修复并发布新版本
+- **想参与**：欢迎提交 Pull Request
+- 原仓库的历史 Issues 与讨论仍保留在原仓库，可直接访问查看
+
 ## ◆ 问题排查 (FAQ)
 
 - **词云不显示中文/中文显示为方框**:
