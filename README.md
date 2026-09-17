@@ -4,7 +4,7 @@
 
 <br>
 
-<div align="center">  <a href="#更新日志"> <img src="https://img.shields.io/badge/version-v2.0.2-9644F4?style=for-the-badge" alt="Version"></a>
+<div align="center">  <a href="#更新日志"> <img src="https://img.shields.io/badge/version-v2.0.3-9644F4?style=for-the-badge" alt="Version"></a>
   <a href="https://github.com/GEMILUXVII/astrbot_plugin_cloudrank/blob/main/LICENSE"> <img src="https://img.shields.io/badge/license-AGPL--3.0-E53935?style=for-the-badge" alt="License"></a>
   <a href="https://www.python.org/downloads/"> <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Version"></a>
   <a href="https://github.com/AstrBotDevs/AstrBot"> <img src="https://img.shields.io/badge/AstrBot-Compatible-00BFA5?style=for-the-badge&logo=robot&logoColor=white" alt="AstrBot Compatible"></a>
@@ -497,6 +497,18 @@ AstrBot/data/plugin_data/cloudrank/
   - **解决**: 确保消息格式完全匹配 `constant.py` 中定义的关键词，包括空格和标点符号，确保消息不以 `/` 开头，否则会被视为命令而非普通消息
 
 ## ◆ 更新日志
+
+#### **v2.0.3** (2026-09-17) — 社区维护修复版
+
+> 本版本为社区维护 fork：原仓库 [GEMILUXVII/astrbot_plugin_cloudrank](https://github.com/GEMILUXVII/astrbot_plugin_cloudrank) 已停止维护，本 fork 修复以下问题后重新发布。
+
+**问题修复**:
+
+- 修复定时词云任务全部被跳过的严重 bug ([#23](https://github.com/GEMILUXVII/astrbot_plugin_cloudrank/issues/23))
+  - 根因：`auto_generate_wordcloud` 定时任务中调用异步方法 `HistoryManager.extract_group_id_from_session()` 时漏写 `await`，导致拿到的是协程对象而非群号
+  - 后果：`is_group_enabled()` 永远匹配失败，所有群都被判定为"未启用"而跳过，定时词云从不触发
+  - 修复：改用同步的 `utils.extract_group_id_from_session()`，并增加非群聊会话过滤（与 `daily_generate_wordcloud` 保持一致）
+  - 感谢 [@wzy](https://github.com/GEMILUXVII/astrbot_plugin_cloudrank/pull/24) 提供的修复方案
 
 #### **v2.0.2** (2025-12-30)
 

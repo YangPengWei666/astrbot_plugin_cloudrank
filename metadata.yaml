@@ -1,5 +1,5 @@
 name: cloudrank
-desc: 词云与排名插件(CloudRank)是一个文本可视化工具，能将聊天记录关键词以词云形式展现，并显示用户活跃度排行榜，支持定时或手动生成
-version: v2.0.2
-author: GEMILUXVII
-repo: https://github.com/GEMILUXVII/astrbot_plugin_cloudrank
+desc: 词云与排名插件(CloudRank)是一个文本可视化工具，能将聊天记录关键词以词云形式展现，并显示用户活跃度排行榜，支持定时或手动生成。本版本为社区维护修复版，修复定时词云任务因漏await导致全群被跳过的问题（原issue #23）。
+version: v2.0.3
+author: Xiaokang
+repo: https://github.com/YangPengWei666/astrbot_plugin_cloudrank
